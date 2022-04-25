@@ -1,0 +1,9 @@
+numpy==1.21.2
+twint==2.1.21
+panda==1.3.4
+nltk==3.6.5
+sns==0.11.2
+wordcloud==1.8.1
+
+contractions==0.1.68 
+dataframe_image==0.1.1
