@@ -77,4 +77,4 @@ From these three scatter plot, we can find that the higher probability, or say, 
 
 ### Cite
 
-I currently plan not to publi
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6485991.svg)](https://doi.org/10.5281/zenodo.6485991)
