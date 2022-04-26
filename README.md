@@ -74,3 +74,7 @@ You will get three plots that show the relationship between the probablity of be
 ![Figure 4](https://github.com/macs30200-s22/replication-materials-zbchen0129/blob/main/ralation_nretweets.png)
 
 From these three scatter plot, we can find that the higher probability, or say, the higher degree, of being political correctness, will lead the tweet to have more likes, replies and retweets in general. It also means that those tweets that have larger social influence (because more people are viewing, clicking like, replying and retweeting), typically will be more politically correct.
+
+### Cite
+
+I currently plan not to publi
