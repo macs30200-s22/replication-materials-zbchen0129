@@ -54,7 +54,7 @@ After running it, you will get and save three plots and an image of the wordclou
 
 ![Figure top nouns](https://github.com/macs30200-s22/replication-materials-zbchen0129/blob/main/top_noun.png)
 ![Figure top adjs](https://github.com/macs30200-s22/replication-materials-zbchen0129/blob/main/top_adj.png)
-![Figure top lemmas](https://github.com/macs30200-s22/replication-materials-zbchen0129/blob/main/top_lemmas.png)
+![Figure top lemmas](https://github.com/macs30200-s22/replication-materials-zbchen0129/blob/main/top_lemma.png)
 
 
 The image below is the wordcloud that shows the most occurring words that most characterize the discussions about political correctness. 
