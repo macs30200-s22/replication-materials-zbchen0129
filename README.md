@@ -31,7 +31,7 @@ Besides, I also get a twitter dataset, which has been already labelled with whet
 
 (1)
 
-For my first question, I use wordcloud to analyze the tweets. Code for the first question is here [pc_analysis.py](https://github.com/macs30200-s22/replication-materials-zbchen0129/blob/main/pc_analysis.py). You can run the following in the terminal:
+For my first question, I use word frequency analysis, including plotting top 20 adjectives, nouns and lemmas of the PC tweets and a wordcloud to analyze the tweets. Code for the first question is here [pc_analysis.py](https://github.com/macs30200-s22/replication-materials-zbchen0129/blob/main/pc_analysis.py). You can run the following in the terminal:
 
 ```python
 import pc_analysis
@@ -50,7 +50,7 @@ Or just run the whole file:
 run pc_analysis.py
 ```
 
-After running it, you will get and save an image of the wordcloud. The image below is the wordcloud that shows the most occurring words that most characterize the discussions about political correctness. 
+After running it, you will get and save three plots and an image of the wordcloud. The image below is the wordcloud that shows the most occurring words that most characterize the discussions about political correctness. 
 ![Figure 1 pc wordcloud](https://github.com/macs30200-s22/replication-materials-zbchen0129/blob/main/pc_wordcloud.png)
 
 This wordcloud shows that political correctness on Twitter is most linked to the topic of freedom, like free expression, gender issues and self identity. Besides, there are negative words like ‘hoax’ and ‘bias’, which to some extent reflects people's attitudes and opinions about PC on Twitter. Some words also identify PC from a political point of view in the top frequencies, like ‘democrats’. 
