@@ -96,7 +96,7 @@ def ml_implement(X_train, y_train, X_test, y_test):
     df.T.plot(kind='bar', figsize = (10, 10), )
     plt.xticks(rotation=360)
     plt.legend(loc='lower right')
-    plt.savefig('clf_metrics.png')
+    plt.savefig('clf_metrics_plot.png')
     
     return classifiers_dict
 
