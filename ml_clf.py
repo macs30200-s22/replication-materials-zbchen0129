@@ -23,6 +23,8 @@ import utils
 
 import dataframe_image as dfi
 
+import requests
+
 train=pd.read_csv('train.csv')
 test=pd.read_csv('test_with_solutions.csv')
 anti_vac = pd.read_csv('antiva_dataset.csv')
@@ -128,17 +130,60 @@ if __name__ == "__main__":
     
     clf = clf_dict['RF']
     
+    data_relation = pd.DataFrame()
+    
+    data_relation['tweet'] = a['tweet']
+    data_relation['prob'] = RF.predict_proba(final_data)[:, 1]
+    data_relation['nlikes'] = a['nlikes']
+    data_relation['nreplies'] = a['nreplies']
+    data_relation['nreplies'] = a['nreplies']
+    
+    
     sns.scatterplot(RF.predict_proba(final_data)[:, 1], a['nlikes'])
     plt.xlabel('Probability of being politically incorrect');
+    plt.title('The probablity of being politically incorrect vs. the number of likes');
     plt.savefig('ralation_nlikes.png')
     
     sns.scatterplot(RF.predict_proba(final_data)[:, 1], a['nreplies'])
     plt.xlabel('Probability of being politically incorrect');
+    plt.title('The probablity of being politically incorrect vs. the number of replies');
     plt.savefig('ralation_nreplies.png')
     
     sns.scatterplot(RF.predict_proba(final_data)[:, 1], a['nretweets'])
     plt.xlabel('Probability of being politically incorrect');
+    plt.title('The probablity of being politically incorrect vs. the number of retweets');
     plt.savefig('ralation_nretweets.png')
     
     
+    
+    # get the number of followers of each username
+    count_list = []
+    for username in a['username']:
+        url = 'https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names='+username
+        response  = requests.get(url)
+        #print(response.json()[0]['followers_count'])
+        #print(type(response.json()[0]['followers_count']))
+        if response.json():
+            count_list.append(response.json()[0]['followers_count'])
+        else:
+            count_list.append(None)
+    
+    data_relation['followers_count'] = count_list
+    mean_value=df_relation['followers_count'].mean()
+    df_relation['followers_count'].fillna(value = mean_value, inplace=True)
+    d = df_relation[df_relation['followers_count']<3000]
+    
+    sns.lmplot(x='prob', y='followers_count', data=d, scatter_kws={"alpha":0.3, "s":5})
+    plt.xlabel('Probability of being politically incorrect');
+    plt.title('The probablity of being politically incorrect vs. the number of followers')
+    plt.savefig('ralation_followers.png')
+    
+    sns.lmplot(x='followers_count', y='prob', data=d, scatter_kws={"alpha":0.2, "s":4})
+    plt.ylabel('Probability of being politically incorrect');
+    plt.title('The number of followers vs. the probablity of being politically incorrect')
+    plt.savefig('followers_prob.png')
+    
+    sns.scatterplot(d['followers_count'], d.nlikes)
+    plt.title('The number of followers vs. the number of likes');
+    plt.savefig('followers_nlikes.png')
     
