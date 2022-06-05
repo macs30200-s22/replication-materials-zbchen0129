@@ -77,15 +77,39 @@ The code is a bit long and complex. Therefore, I recommend you to directly run t
 run ml_clf.py
 ```
 
-You will get three plots that show the relationship between the probablity of being politiclly correct and the number of likes, replies, retweets respectively. Figures are below.
+By running the code, you will first get a table and a figure showing the predictive performance of the five ML classifiers. They are shown below.
 
-![Figure 2](https://github.com/macs30200-s22/replication-materials-zbchen0129/blob/main/ralation_nlikes.png)
+![Figure 2](https://github.com/macs30200-s22/replication-materials-zbchen0129/blob/main/clf_metrics.png)
 
-![Figure 3](https://github.com/macs30200-s22/replication-materials-zbchen0129/blob/main/ralation_nreplies.png)
+![Figure 3](https://github.com/macs30200-s22/replication-materials-zbchen0129/blob/main/clf_metrics_plot.png)
 
-![Figure 4](https://github.com/macs30200-s22/replication-materials-zbchen0129/blob/main/ralation_nretweets.png)
+We can see that Random Forest has the highest accuracy, precision and recall score. It also ranks the second highest in terms of the f1 score. Therefore, 
+RF classifier performs the best on the test data and I will apply it to label the anti-vaccination discussion tweets in the next steps.
 
-From these three scatter plot, we can find that the higher probability, or say, the higher degree, of being political correctness, will lead the tweet to have more likes, replies and retweets in general. It also means that those tweets that have larger social influence (because more people are viewing, clicking like, replying and retweeting), typically will be more politically correct.
+
+In the code, there is also a part of correlation analysis. Therefore, by running the code, you will also get a few plots which are shown below.
+
+![Figure 4](https://github.com/macs30200-s22/replication-materials-zbchen0129/blob/main/ralation_nlikes.png)
+
+![Figure 5](https://github.com/macs30200-s22/replication-materials-zbchen0129/blob/main/ralation_nreplies.png)
+
+![Figure 6](https://github.com/macs30200-s22/replication-materials-zbchen0129/blob/main/ralation_nretweets.png)
+
+From these figures above, we can find that a higher probability or a higher degree of being politically incorrect, will lead the tweet to have less likes, replies and retweets in general. It also means that those tweets that have larger social influence (because moree people are viewing, clicking like, replying and retweeting), typically will be less politically incorrect. 
+
+![Figure 7](https://github.com/macs30200-s22/replication-materials-zbchen0129/blob/main/ralation_followers.png)
+
+The above figure shows that being more politically incorrect may generally decrease the number of followers.
+
+![Figure 8](https://github.com/macs30200-s22/replication-materials-zbchen0129/blob/main/followers_prob.png)
+
+In this figure (above), it is indicated that users with larger social influence will tweet more cautiously thus less incorrectly.
+
+![Figure 9](https://github.com/macs30200-s22/replication-materials-zbchen0129/blob/main/followers_nlikes.png)
+
+Finally, I plot the relationship between the number of followers and the number of likes. The above figure shows that having more followers does not imply receiving more likes. 
+
+
 
 ### Cite
 
