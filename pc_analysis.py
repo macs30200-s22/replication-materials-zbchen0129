@@ -5,6 +5,7 @@ import string
 
 import pandas as pd
 import numpy as np
+import word_freq
 
 def data_clean(df):
     data = [utils.remove_characters_before_tokenization(i) for i in df]
@@ -28,5 +29,15 @@ def plot_wordcloud(text):
 if __name__ == '__main__':
     df_pc= pd.read_csv('pc_dataset.csv', index_col=0)
     text = data_clean(df_pc['tweet'])
+    
+    word_freq.plot_top_adj(df1['tweet'], "PC tweets", n = 20)
+    plt.savefig('top_adj')
+    
+    word_freq.plot_top_noun(df1['tweet'], "PC tweet", n = 20)
+    plt.savefig('top_noun')
+    
+    word_freq.plot_top_lemmas(df1['tweet'], "tweet", n = 20)
+    plt.savefig('top_lemma')
+    
     plot_wordcloud(text)
 
