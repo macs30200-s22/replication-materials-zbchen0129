@@ -1,6 +1,6 @@
 # replication-materials-zbchen0129
 replication-materials-zbchen0129 created by GitHub Classroom
-My research question is 1) how political correctness is discussed and portrayed on Twitter; 2) whether being politically correct/incorrect will affect the influence of an anti-vaccination tweet. 
+My research question is 1) how political correctness is discussed and portrayed on Twitter; 2) whether being politically incorrect will affect the influence of an anti-vaccination discussion tweets. 
 
 All codes and data in this repository is written in Python 3.7 and all of its dependencies can be installed by running the following in the terminal (with the `requirements.txt` file included in this repository):
 
@@ -36,12 +36,16 @@ For my first question, I use word frequency analysis, including plotting top 20 
 ```python
 import pc_analysis
 import pandas as pd
+import word_freq
 ```
 
 And then use functions in pc_analysis.py:
 ```python
 df_pc= pd.read_csv('pc_dataset.csv', index_col=0)
 text = pc_analysis.data_clean(df_pc['tweet'])
+word_freq.plot_top_adj(df1['tweet'], "PC tweets", n = 20) 
+word_freq.plot_top_noun(df1['tweet'], "PC tweet", n = 20)
+word_freq.plot_top_lemmas(df1['tweet'], "tweet", n = 20)
 pc_analysis.plot_wordcloud(text)
 ```
 
